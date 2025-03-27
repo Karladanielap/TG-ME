@@ -1,0 +1,64 @@
+name: TGME
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - anndata
+  - arpack
+  - h5py
+  - hdf5
+  - imageio
+  - jupyter_client
+  - jupyter_core
+  - keras-preprocessing
+  - leidenalg
+  - matplotlib-base
+  - matplotlib-inline
+  - networkx
+  - numba
+  - numpy
+  - pickleshare
+  - pillow
+  - pip
+  - prompt-toolkit
+  - python
+  - scanpy
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - umap-learn
+  - unicodedata2
+  - wheel
+  - yaml
+  - pip:
+      - igraph
+      - ipykernel
+      - ipython
+      - jupyter
+      - jupyter-client
+      - jupyter-console
+      - jupyter-core
+      - jupyter-events
+      - jupyter-lsp
+      - jupyter-server
+      - jupyter-server-terminals
+      - jupyterlab
+      - jupyterlab-pygments
+      - jupyterlab-server
+      - jupyterlab-widgets
+      - nbclient
+      - nbconvert
+      - nbformat
+      - notebook
+      - notebook-shim
+      - pandas
+      - python-igraph
+      - python-json-logger
+      - stitch2d
+      - squidpy
+      - numba
+      - pillow
+      - scikit-network
+
+      
