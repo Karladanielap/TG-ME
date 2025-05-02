@@ -20,7 +20,7 @@ dependencies:
   - numba=0.55.1
   - numpy=1.21.6
   - pickleshare=0.7.5
-  - pillow=10.2.0
+  - pillow=9.5.0
   - pip=23.3.1
   - prompt-toolkit=3.0.43
   - python=3.8.19
