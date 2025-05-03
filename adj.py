@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""
+# Author: ChangXu
+# Modified by: Karla Paniagua
+
+"""
+
 
 import os,sys
 import numpy as np
