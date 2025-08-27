@@ -1,10 +1,21 @@
 #!/usr/bin/env python
 """
 # Author: ChangXu
-# Modified by: Karla Paniagua
+# Created Time : Mon 23 Apr
+# File Name: cal_graph.py
+# Description:`
 
 """
+"""
+test:
+    from cal_graph import graph, combine_graph_dict
+    import scanpy as sc
+    data_path = "/home/xuchang/Project/STMAP/Human_breast/output/Breast_data/STMAP_Breast_15.h5ad"
+    adata = sc.read(data_path)
+    graph_cons = graph(adata.obsm['spatial'], distType='euclidean', k=10)
+    graph_dict = graph_cons.main()
 
+"""
 
 import os,sys
 import numpy as np
@@ -16,6 +27,10 @@ from torch_sparse import SparseTensor
 import networkx as nx
 
 
+##### refer to https://github.com/mustafaCoskunAgu/SiGraC/blob/main/DGI/utils/process.py
+
+
+# edgeList to edgeDict
 class graph():
     def __init__(self, 
                  data, 
@@ -117,6 +132,11 @@ class graph():
         return graphList
 
     def List2Dict(self, graphList):
+        """
+        Return dict: eg {0: [0, 3542, 2329, 1059, 397, 2121, 485, 3099, 904, 3602],
+                     1: [1, 692, 2334, 1617, 1502, 1885, 3106, 586, 3363, 101],
+                     2: [2, 1849, 3024, 2280, 580, 1714, 3311, 255, 993, 2629],...}
+        """
         graphdict = {}
         tdict = {}
         for graph in graphList:
