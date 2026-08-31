@@ -1,10 +1,5 @@
 #!/usr/bin/env python
-'''
-# Author: ChangXu
-# Create Time : 2021.4
-# File Name :utils_func.py
 
-'''
 
 import os
 import sys
