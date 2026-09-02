@@ -135,10 +135,10 @@ def cal_weight_matrix(
       adata.obsm["morphological_similarity"] = morphological_similarity	
     adata.obsm["weights_matrix_all"] = (physical_distance*gene_correlation*morphological_similarity*cellcompo_correlation)
     if no_morphological:
-      adata.obsm["weights_matrix_nomd"] = (gene_correlation*physical_distance)	
+      adata.obsm["weights_matrix_nomd"] = (gene_correlation*physical_distance*cellcompo_correlation)	
     print("The weight result of image feature is added to adata.obsm['weights_matrix_all'] !")						
   else:
-    adata.obsm["weights_matrix_nomd"] = (gene_correlation* physical_distance*cellcompo_correlation*cellcompo_correlation)
+    adata.obsm["weights_matrix_nomd"] = (gene_correlation* physical_distance*cellcompo_correlation)
     print("The weight result of image feature is added to adata.obsm['weights_matrix_nomd'] !")
   return adata
 
