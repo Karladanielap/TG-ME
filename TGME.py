@@ -410,11 +410,8 @@ class TransformerModel(nn.Module):
         out = self.ffn2(self.dropout(out))
         return out
 
-    def forward(self, gcn_embeddings):  # Pass GCN embeddings as input
-        # Integrate GCN embeddings into the input
+    def forward(self, x): 
         #print(x.shape)
-        #print(gcn_embeddings.shape)
-        x = gcn_embeddings
         act_fun=None
         out_attn = self.multiattention1(x)
         out_attn_1 = self.sublayer(x, out_attn)
@@ -430,7 +427,6 @@ class TransformerModel(nn.Module):
         if act_fun == 'gelu':
             m = torch.nn.GELU()
             out_attn_3 = m(out_attn_3)
-        #out_attn_3=self.output_projection(out_attn_3)
         y_pred = self.fc(out_attn_3)
         y_pred = F.log_softmax(y_pred, dim=1)
 
@@ -441,27 +437,16 @@ class TGME(nn.Module):
     def __init__(self, batch_size, n_head, n_gene,num_classes, d_ff, dropout_rate, mode, input_dim, conv_hidden, p_drop,
                 dec_cluster_n,activate):
         super(TGME, self).__init__()
-
-        # GCN layers
-        #gcn_model = GCNModel(num_features, hidden_channels, num_classes)
    
         # Transformer layers
         self.transformer = TransformerModel(batch_size, n_head, n_gene, n_gene,num_classes, n_gene, d_ff, dropout_rate, mode)
         self.gcn_model= GCNModel(input_dim, conv_hidden=[32,32],p_drop=0.1, dec_cluster_n=15, activate="relu")
-        #self.prediction_layer= nn.Linear(hidden_channels, dec_cluster_n)
-        #self.prediction_layer=nn.Linear(input_dim+conv_hidden[-1],num_classes)
+
         
     def forward(self, x, edge_index):
         # Forward pass through 
         embeddings,y_pred= self.transformer(x)
         z, mu, logvar, de_feat, q, gnn_z= self.gcn_model(embeddings,edge_index)
-        #y_pred=self.prediction_layer(z)
-        #y_pred=F.log_softmax(y_pred,dim=1)
-        #predictions=self.prediction_layer(gcn_output)
-        #y_pred = F.log_softmax(predictions, dim=1)
-        #print(gcn_output[0].shape)
-        # Forward pass through Transformer
-          # Pass GCN output as input
 
         return y_pred,de_feat,embeddings,z,gnn_z
 
