@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-# @Author: ChangXu
-# @E-mail: xuchang0214@163.com
-# @Last Modified by:   ChangXu
-# @Last Modified time: 2021-04-22 08:42:54 23:22:34
-# -*- coding: utf-8 -*-
+# Original function Author: ChangXu
+# 2021-04-22
+
+# Function adapted and modified by Karla Paniagua
+# August 2025
+# Pre-processing
 
 import os
 import time
