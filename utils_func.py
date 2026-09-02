@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+# Original function Author: ChangXu
+# 2021-04-22
+
+# Function adapted and modified by Karla Paniagua
+# August 2025
+# Pre-processing
 
 import os
 import sys
