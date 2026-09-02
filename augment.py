@@ -138,7 +138,7 @@ def cal_weight_matrix(
       adata.obsm["weights_matrix_nomd"] = (gene_correlation*physical_distance)	
     print("The weight result of image feature is added to adata.obsm['weights_matrix_all'] !")						
   else:
-    adata.obsm["weights_matrix_nomd"] = (gene_correlation* physical_distance*cellcompo_correlation)
+    adata.obsm["weights_matrix_nomd"] = (gene_correlation* physical_distance*cellcompo_correlation*cellcompo_correlation)
     print("The weight result of image feature is added to adata.obsm['weights_matrix_nomd'] !")
   return adata
 
