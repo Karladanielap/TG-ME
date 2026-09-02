@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 """
-# Author: ChangXu
-# Created Time : Mon 23 Apr
-# File Name: cal_graph.py
-# Description:`
+# Original function Author: ChangXu
+# 2021-04-22
+
+# Function adapted and modified by Karla Paniagua
+# August 2025
+# Pre-processing
 
 """
 """
