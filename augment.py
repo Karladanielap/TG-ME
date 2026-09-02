@@ -75,14 +75,6 @@ def cal_cellcompo_weight(
   ):
   cell_type_comp=data[ct]
 	
-#data[['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19']])
-#data[['Astrocyte', 'Cholangiocyte', 'Excitatory neuron','Goblet cell', 'Oligodendrocyte', 'Retinal ganglion cell',]])
-#(data[['stroma', 'basal_like_1', 'basal_like_2', 'mesenchymal', 'luminal_ar']])
-#[['Retinal ganglion cell', 'CD4 T cell', 'Oligodendrocyte', 'Excitatory neuron', 'Neuron', 'Progenitor cell', 'Astrocyte', 'Epithelial cell']])
-
-
-#'Bcell', 'Tcell', 'basal_like_1', 'basal_like_2','endothelial', 'luminal_ar', 'macrophage', 'mesenchymal','stroma']])
-#data[['endothelial', 'mast', 'T CD4 naive', 'epithelial', 'B-cell', 'pDC','T CD4 memory', 'NK', 'macrophage', 'neutrophil', 'tumor','plasmablast', 'mDC', 'fibroblast', 'Treg', 'T CD8 naive', 'monocyte','T CD8 memory']])
   cellcompo_correlation =1-pairwise_distances(np.array(cell_type_comp), metric = cellcompo_dist_type)
   return cellcompo_correlation
 
