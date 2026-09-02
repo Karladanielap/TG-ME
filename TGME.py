@@ -90,7 +90,7 @@ def splitdata(num_classes,test_size,val_size,x,y_label,graph_dict):
 
     # Initialize lists to store indices for splitting
     train_indices, val_indices, test_indices = [], [], []
-    for class_label in range(0,7):
+    for class_label in range(0,num_classes):
         # Get indices of data samples belonging to the current class
         class_indices = np.where(y_label == class_label)[0]
 
